@@ -5,17 +5,8 @@ jdk:
   - openjdk6
 script: mvn compile test
 install: true
-notifications:
-  irc: 
-    channels: 
-      - "irc.esper.net#lain"
-    on_success: change
-    on_failure: always
-  email:
-    recipients:
-      - "khobbits@ess3.net"
-    on_success: change
-    on_failure: alwaysbefore_install:
+
+before_install:
   - wget https://dl.dropboxusercontent.com/u/7897865/apache-maven-3.3.9.zip
   - unzip -qq apache-maven-3.3.9.zip
   - export M2_HOME=$PWD/apache-maven-3.3.9
